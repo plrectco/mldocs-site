@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Data Reduction - Machine Learning Basics</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Data Reduction";
+    var mkdocs_page_input_path = "preprocess/data_reduction_overview.md";
+    var mkdocs_page_url = "/preprocess/data_reduction_overview/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Machine Learning Basics</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Database Basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../db/mysql/">Relational Database</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../db/mongo/">Non-relational Database</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Data Preprocessing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../preprocess/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../data_cleaning/">Data Cleaning</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../data_integration/">Data Integration</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Data Reduction</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#data-reduction">Data Reduction</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#feature-selection">Feature Selection</a></li>
+        
+            <li><a class="toctree-l4" href="#instance-selection">Instance Selection</a></li>
+        
+            <li><a class="toctree-l4" href="#discretization">Discretization</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Algorithm</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../algorithm/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Supervised Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/nn/">Neural Network</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/svm/">Support Vector Machine</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/tree/">Decision Tree & Random Forest</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unsupervised Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/pca/">Principal Component Analysis</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/kmeans/">K-means Clustering</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/encoder/">Auto-encoder</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/compressive/">Compressive Sensing</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Semi-Supervised Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/semi/">Overview</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Reinforcement Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/reinforcement/">Overiew</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../algorithm/qlearning/">Q learning</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../framework/">Machine Learning Framework</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../bigdata/">Big Data</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Machine Learning Basics</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Data Preprocessing &raquo;</li>
+        
+      
+    
+    <li>Data Reduction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="data-reduction">Data Reduction</h1>
+<ul>
+<li>
+<p>Data redcution can be devided into 3 categories</p>
+<ul>
+<li>dimension reduction</li>
+<li>sample numerosity reduction</li>
+<li>cardinality reduction</li>
+</ul>
+</li>
+<li>
+<p>Dimension Reduction (DR):</p>
+<ul>
+<li>
+<p>why we need it? the curse of dimension
+ number of training samples should grows linearly or even exponentially with the dimensions. For exaample, when dealing with non-parametric learners, such as decision tree.</p>
+</li>
+<li>
+<p>PCA: normalize the input data, get the principal components by calculating the eigenvalues-eigenvectors of the covariance matrix of the original data, sort by the eigenvalues, reduce weaker components</p>
+</li>
+<li>
+<p>Factor Analysis: Discover hiddeen factos in the current variables. Assume that there is a set of latent varaibels that generate the original data. Major method is using PCA. (, the eigenvalues of PCA are inflated component loadings, i.e., contaminated with error variance, from wikipedia)
+Therefore in my opinion, this maybe that factor analysis introduce an error item and it will estimate it recursively until it converge(it may not!) before hand.</p>
+</li>
+<li>
+<p>Mutidimensional scaling: it reduces the data into a space that the distance between each other is minimized. Too much mathematics. </p>
+</li>
+<li>
+<p>Locally linear embedding: Assume data lies in a manifold with dimension d &lt; D like a line in a plain. Each point can be revcovered by its neightbor. It preserve the invariance to rotation and scaling. Then we can use the weight to get the d-dimensional coordinate by fixing the weight and finding the d-dimensional coordinate to minimize teh sqarue distances of all points.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Data Sampling </p>
+<ul>
+<li>
+<p>why?</p>
+<ul>
+<li>reduce the number of instances submitted to the data mining algorithm. Predictive learning often can have 10%-20% of data to learn without the dererioration of performance.</li>
+<li>balancing the data, like oversampling the rare case and undersampling the common case</li>
+<li>partition into training , validation and testing sets.</li>
+</ul>
+</li>
+<li>
+<p>method</p>
+<ul>
+<li>simple random sample without replacement</li>
+<li>simple random sample with replacement</li>
+<li>balanced sample</li>
+<li>clusters sample, like samples in geographically separated areas.</li>
+<li>stratified ssample</li>
+</ul>
+</li>
+<li>
+<p>data condensation: selection of small representatives</p>
+</li>
+<li>
+<p>data squashing: use a compressed set of data such that hte staistical properties are preserved</p>
+</li>
+<li>
+<p>data clustering: use the cluster instead of the data itself</p>
+</li>
+</ul>
+</li>
+<li>
+<p>bining and reduction of cardinality</p>
+<ul>
+<li>bining is discretize the continuous data into discrete ones which cover different ranges. combine different categories into one indicator variable, reducing the possibility that original category has trivially almost all 0 or 1.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="feature-selection">Feature Selection</h2>
+<ul>
+<li>
+<p>Feature Relevance</p>
+<p>Feature relevance is an abstract concept in terms of an ideal Bayes classifier</p>
+<ul>
+<li>
+<p>strongly relevant if remove the feature X will result in the deterioration of the classification results</p>
+</li>
+<li>
+<p>weakly relevant if there exisits a set S that performance is better when using S U {X} than S.</p>
+</li>
+<li>
+<p>irrelevant if neither weakly or strong relevant</p>
+</li>
+</ul>
+<p><strong><em>Note</em></strong>: The difference between stong and weakly is that one is for  all set and one only requires existence.</p>
+</li>
+<li>
+<p>Feature Selection Method</p>
+<ul>
+<li>
+<p>indivisual searching vs subset searching</p>
+</li>
+<li>
+<p>filters, wrappers and embedded methods</p>
+</li>
+<li>
+<p>Filter method</p>
+<ul>
+<li>chi-Sqaured: univariate, the higher teh chi-squared, the more relkevant the feature with tespect to the class.</li>
+<li>information gain: entorpy orginal - entropy psterior</li>
+<li>Correlea=ation-Based Feature Selection.: multivariate, the more the fetaure related with the class and the less with the orther feature, the more it is selected.</li>
+<li>RelieF: improved version of Relief algorithm. The attributes that separate the same class is insisgificant and the attributes that separate different calsses is desirable.
+<a href="../RelieF.py">RelieFCode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="instance-selection">Instance Selection</h2>
+<ul>
+<li>
+<p>Overview</p>
+<ul>
+<li>
+<p>two main method: select training set, select prototype.</p>
+</li>
+<li>
+<p>instance selection is to select the data subset such as the whole set is used. In other words, it is like reduce redundancy.</p>
+</li>
+<li>
+<p>It is like select a set from the training set and test it over the test set(the test set is the same for comparison purpose)</p>
+</li>
+<li>
+<p>PS methods: prototype selection. This method uses an instance base classifier to divide the training set with measure like similarity and distance measure. </p>
+</li>
+<li>
+<p>TSS method: training set selection. It is more like a way to inmprove the interpretability and precision of a predictive model. Most common applications are ANNs, SVMs and decision trees.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Prototype method</p>
+<ul>
+<li>
+<p>Direction of search</p>
+<ul>
+<li>incremental</li>
+<li>decremental</li>
+<li>batch: based on decremental, remove instances in batch</li>
+<li>mixed: start with a preselected subset, and hthen add or remove instances </li>
+</ul>
+</li>
+<li>
+<p>Type of selection</p>
+<ul>
+<li>condensation: retain the points in the decision boundary, and remove the internal one: high reduction scale but low accuracy on test sets (due to overfitting)</li>
+<li>edition: remove noisy border point: high accruracy but low reduction</li>
+<li>Hybrid</li>
+</ul>
+</li>
+<li>
+<p>Evaluation of search</p>
+<ul>
+<li>filter</li>
+<li>wrapper</li>
+</ul>
+</li>
+<li>
+<p>Criteria </p>
+<ul>
+<li>storage reduction</li>
+<li>generalization accuracy</li>
+<li>noise tolenrance</li>
+<li>time complexity</li>
+</ul>
+</li>
+<li>
+<p>Method</p>
+<ul>
+<li>
+<p>condensation algorithms</p>
+<ul>
+<li>
+<p>incremental CNN</p>
+<p>condensed nearest neighborsrandomly select one instance belonging to each output class from TR and put them in a set S. Classify other instances in the TR using the instances in S, using the nearest neighbors. When misclassified, it is added to S, thus ensuring it is not misclassifed.   </p>
+</li>
+<li>
+<p>decremental </p>
+</li>
+<li>
+<p>RNN: reduced nearest neighbors. S = TR, remove an instance that does not impact other instances' classification. </p>
+</li>
+<li>
+<p>Shrink: Similar to RNN, but consider only the removed one is correctly classified or not.</p>
+</li>
+<li>
+<p>Minimal Consistent Set (This method is like Go, the instance with more own class neighbor wins)</p>
+<p>consistency is the key word. And before that we need to know NUN dist = Nearest unlike neighbots dist. Instance is consistent when it has NUN dist greater than the dist between it and the nearest unlike neighbor( by definition )
+The iteration starts with the entire set. Then remove inconsistent instances.
+Each instance has a vote, which is given by the own-class neighbors who are within the NUN distance range. Then we would like to starts with the candidate with the largest votes and then eliminate the voters that vote it (because it is a selected representitive.) Repeat this procedure until all instanse in the set has been considered.
+Repeat since NUN may change during the above procedures. All procedures can be repeated until convergence.     </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Edition algorithm</p>
+<ul>
+<li>Edited  NN: instance is deleted when it does not agree with the nearest k neighbors</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="discretization">Discretization</h2>
+<ul>
+<li>
+<p>Motivation</p>
+<ul>
+<li>some data mining algorithms require discrete values.</li>
+<li>it can be more efficient when training
+** Note: it may lose information of the data, thus minimizatinon of information loss is the main goal of a discretizer.</li>
+</ul>
+</li>
+<li>
+<p>More</p>
+<ul>
+<li>obtaining an optimal discrezation is NP complete.</li>
+<li>arity: the number of patitions</li>
+<li>procedures: sort attribute -&gt; obtain cut points -&gt; perform evaluation -&gt; split/merge attribute -&gt; stop criterion</li>
+</ul>
+</li>
+<li>
+<p>Common Properties</p>
+<ul>
+<li>static vs dynamic: dynamic discretizer is in relation to the learner. Almost all disretizer is static.</li>
+<li>univariate vs multivariate: multivatiate: 2D discretization - considering two attributes at the same time to find the best cut points.</li>
+<li>supervised vs unsupervised: unsupervised does not consider the class labels. In supervised discretizers, the heuristic measures such as entropy and interdenpendecy are used to dermine the best cut points.</li>
+<li>spliting vs merging: top down and bottom up</li>
+<li>global vs local: either all the available data or use only partial information. Few discretizers are local.</li>
+<li>direct vs incremental: divide into k intervals simultaneously or perfect the division step by step.</li>
+<li>evaluation measrues:<ul>
+<li>information: entropy</li>
+<li>statistical: dependency</li>
+<li>rough sets: lower and uppper approximation, class separativity.</li>
+<li>wrapper: error rate provided by a classifier</li>
+<li>binning: absense of evaluation measure. EqualWidth and EqualFrequency.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Criterion to compare discretization methods</p>
+<ul>
+<li>number of intervals, the smaller the better</li>
+<li>inconsistency. unavoidable measure: two instances with the same input attribute but different class labels.</li>
+<li>predictive classification rate</li>
+<li>time requirement</li>
+</ul>
+</li>
+<li>
+<p>Spliting Methods</p>
+<ul>
+<li>Equal width and equal frequency. equal frequency is in terms of continuous value, then the length of the interval can be found by dividing the length of the whole interval with desired arity. It is also equal width. </li>
+<li>MDLP.<ul>
+<li>use entropy to measure cut points</li>
+<li>minimum disccription length principle to decide the acceptation o rejection for each cut pouint as the stopping criterion. The length of bits needed to distinguish an object. It stops when the information gain exceeds a value.</li>
+</ul>
+</li>
+<li>Distance <ul>
+<li>Mantaras distance</li>
+<li>it chooses the cut points that minimize the distance.</li>
+</ul>
+</li>
+<li>PKID: proportional discretization (to the size of data set). Desired interval frequencies and desired interval number are equal.</li>
+<li>FFD: fixed frequency discretization. Fixed frequency and then divide. Compared to equal frequncy, which fixed number of interval and then divide according to equal frequency.</li>
+</ul>
+</li>
+<li>
+<p>Merging Method</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../algorithm/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../data_integration/" class="btn btn-neutral" title="Data Integration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../data_integration/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../algorithm/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
