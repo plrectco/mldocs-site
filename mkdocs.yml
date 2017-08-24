@@ -6,32 +6,13 @@ markdown_extensions:
 theme: readthedocs
 pages:
 - Home: index.md
-- Database Basics:
-  - Relational Database: db/mysql.md
-  - Non-relational Database: db/mongo.md
-- Data Preprocessing: 
-  - Overview: preprocess/preprocess.md
-  - Data Cleaning: preprocess/data_cleaning.md
-  - Data Integration: preprocess/data_integration.md
-  - Data Reduction: preprocess/data_reduction_overview.md
-- Algorithm:
-  - Overview: algorithm/overview.md
-  - Supervised Learning:
-    - Neural Network: algorithm/nn.md
-    - Support Vector Machine: algorithm/svm.md
-    - Decision Tree & Random Forest: algorithm/tree.md
-  - Unsupervised Learning:
-    - Principal Component Analysis: algorithm/pca.md
-    - K-means Clustering: algorithm/kmeans.md
-    - Auto-encoder: algorithm/encoder.md
-    - Compressive Sensing: algorithm/compressive.md
-  - Reinforcement Learning:
-    - Overiew: algorithm/reinforcement.md
-    - Q learning: algorithm/qlearning.md
-  - Deep Learning:
-    - Convolution Neural Network: algorithm/cnn.md
-    - Recurrent Network: algorithm/recurrent.md
+- Database Basics: db/db.md
+- Data Preprocessing: preprocess/data_preprocessing.md
+- Algorithm: algorithm/algorithm.md
 - Machine Learning Framework: framework/framework.md
 - Big Data: bigdata/bigdata.md
+
+
+
 
 

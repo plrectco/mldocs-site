@@ -1,3 +1,4 @@
-# Welcome to Machine Learning
+# Machine Learning and Big Data 
+This knowledge center is contributed by the data team of Wang Lab in SJTU, which is designed for internal self-learning.
+You can find following topics in this knowledge center.
 
-This website is created for the machine learning project doc demo of Wang's Lab. Rights reserved.
